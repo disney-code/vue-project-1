@@ -1,27 +1,16 @@
 <template>
-  <AppLayout>
-    <template v-slot:header>
-      Slots are awesome
-    </template>
-    
-  <!-- <AppButton>
-    ADD TO FAVOURITES
-  </AppButton> -->
-  <template v-slot:footer>
-      made with slots
-    </template>
-  </AppLayout>
   
+  <AppUserList></AppUserList>
 </template>
 
 <script>
 // import AppButton from './components/AppButton.vue'
-import AppLayout from './components/AppLayout.vue'
+//import AppLayout from './components/AppLayout.vue'
+import AppUserList from './components/AppUserList.vue';
 export default {
   name: 'App',
   components: {
-    // AppButton,
-    AppLayout
+    AppUserList
   }
 }
 </script>

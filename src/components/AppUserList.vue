@@ -14,7 +14,9 @@
         </div>
       </li>
     </ul>
-    <slot v-if="state === 'loading'" name="loading"> loading ... </slot>
+    <slot v-if="state === 'loading'" name="loading">
+      <div>loading ...</div>
+    </slot>
     <slot v-if="state === 'failed'" name="error">
       opps, something went wrong
     </slot>

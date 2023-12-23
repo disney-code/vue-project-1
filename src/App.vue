@@ -1,16 +1,16 @@
 <template>
   
-  <AppUserList></AppUserList>
+  <AppUserList2></AppUserList2>
 </template>
 
 <script>
 // import AppButton from './components/AppButton.vue'
 //import AppLayout from './components/AppLayout.vue'
-import AppUserList from './components/AppUserList.vue';
+import AppUserList2 from './components/AppUserList2.vue';
 export default {
   name: 'App',
   components: {
-    AppUserList
+    AppUserList2
   }
 }
 </script>

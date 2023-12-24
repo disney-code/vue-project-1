@@ -1,17 +1,14 @@
 <template>
-  <div class="button">
-   <button>
-    <slot></slot>
-   </button>
+  <div>
+    <p>Goomorning</p>
+    <button>Delete</button>
   </div>
 </template>
 
 <script>
 export default {
- 
-  name: 'AppButton',
-  
-}
+  name: "AppButton",
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

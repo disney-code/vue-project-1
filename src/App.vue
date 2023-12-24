@@ -1,6 +1,8 @@
 <template>
   
-  <AppUserList2 :secondrow="(user)=>user.email"></AppUserList2>
+  <AppUserList2 :secondrow="(user)=>user.phone" >
+  
+  </AppUserList2>
 </template>
 
 <script>

@@ -1,23 +1,25 @@
 <template>
   <div>
-    <div>Users</div>
+    <div>Users {{ count }}</div>
     <br />
     <div v-if="loading">Loading ...</div>
     <ul>
       <li v-for="item in users" :key="item.email">
         <div>
-          <img :src="item.picture.medium" alt="User Image" />
-          <div>{{ item.name.first }}</div>
-          <div>{{ secondrow(item) }}</div>
+          <app-user-cards-list :user="item"></app-user-cards-list>
+          
         </div>
       </li>
     </ul>
   </div>
 </template>
 <script>
+import AppUserCardsList from "./AppUserCardsList.vue";
 export default {
+  components: { AppUserCardsList },
   name: "AppUserList2",
   props: {
+    count: { type: Number },
     secondrow: {
       type: Function,
       default: () => {},
@@ -43,6 +45,11 @@ export default {
           console.log(this.users);
         })
         .catch((error) => console.error("Fetch error: ", error));
+    },
+    remove(item) {
+      this.users.results = this.users.results.filter(
+        (entry) => entry.email !== item.email
+      );
     },
   },
   mounted() {

@@ -8,6 +8,7 @@
         <div>
           <img :src="item.picture.medium" alt="User Image" />
           <div>{{ item.name.first }}</div>
+          <div>{{ secondrow(item) }}</div>
         </div>
       </li>
     </ul>
@@ -16,6 +17,12 @@
 <script>
 export default {
   name: "AppUserList2",
+  props: {
+    secondrow: {
+      type: Function,
+      default: () => {},
+    },
+  },
   data() {
     return {
       users: null,

@@ -3,27 +3,17 @@
     <div>Users {{ count }}</div>
     <br />
     <div v-if="loading">Loading ...</div>
-    <ul>
-      <li v-for="item in users" :key="item.email">
-        <div>
-          <app-user-cards-list :user="item"></app-user-cards-list>
-          
-        </div>
-      </li>
-    </ul>
+    <slot name="userlist" :list="users"></slot>
+    
   </div>
 </template>
 <script>
-import AppUserCardsList from "./AppUserCardsList.vue";
+//import AppUserCardsList from "./AppUserCardsList.vue";
 export default {
-  components: { AppUserCardsList },
+  
   name: "AppUserList2",
   props: {
     count: { type: Number },
-    secondrow: {
-      type: Function,
-      default: () => {},
-    },
   },
   data() {
     return {

@@ -1,19 +1,29 @@
 <template>
-  <div class="user-card">
-    <img :src="user.picture.large" />
-    <h3>{{ user.name.first }}</h3>
-    <p>{{ user.email }}</p>
-    <AppButton/>
-  </div>
+  <ul>
+    <li v-for="item in list" :key="item.email">
+      <slot name="listitem" :user="item">
+        <div class="card">
+          <img :src="item.picture.large" />
+          <div class="card-body">
+            <slot name="first" :text="item.name.first"></slot>
+            <slot name="last" :text="item.name.last"></slot>
+            <slot name="full" :text="`${item.name.first} ${item.name.last}`"></slot>
+            
+          </div>
+          
+        </div>
+      </slot>
+    </li>
+  </ul>
 </template>
 <script>
-import AppButton from './AppButton.vue';
+// import AppButton from "./AppButton.vue";
 export default {
-  components:{AppButton},
+  
   name: "AppUserCardList",
   props: {
-    user: {
-      type: Object,
+    list: {
+      type: Array,
     },
   },
 };
